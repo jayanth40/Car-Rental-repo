@@ -5,7 +5,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 const { cars } = require('./connector')
 const { users } = require('./connector')
-
+const cors = require('cors');
+app.use(cors({ origin: 'http://localhost:3000' }));
 
 app.get('/cars',async (req,res)=>{
     const data = await cars.find({available:"Yes",section:"Car"})
@@ -22,7 +23,7 @@ app.post('/user',async(req,res)=>{
         vehicalId,
         bookingDate,
         bookingTime} = req.body
-    const newUser = new users({
+const newUser = new users({
         firstName,
         lastName,
         vehicalId,
@@ -31,10 +32,10 @@ app.post('/user',async(req,res)=>{
     })
    try{newUser.save()
     res.json(newUser)
-}catch(err){
+    }catch(err){
     console.log(err)
     res.status(400).json("Booking Unsuccessful")
-}
+    }
 })
 
 app.listen(port, () => console.log(`App Running on PORT ${port}!`))
