@@ -27,6 +27,21 @@ available:"Yes"},
     section:"Bike",
     type:"Sports",
     model:"KTM RC8 R",
-available:"Yes"}]
+available:"Yes"},
+{vehicalId:6,
+    section:"Car",
+    type:"Sedan",
+    model:"Honda Accord",
+    available:"Yes"},
+    {vehicalId:7,
+        section:"Car",
+        type:"SUV",
+        model:"Toyota RAV4",
+        available:"Yes"},
+        {vehicalId:8,
+            section:"Car",
+            type:"Hatchback",
+            model:"Hyundai Veloster",
+            available:"Yes"},]
 // console.log(data)
 exports.data = data;

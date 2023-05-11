@@ -6,7 +6,8 @@ const UserSchema = new mongoose.Schema({
     firstName:String,
     lastName:String,
     vehicalId:Number,
-    bookingDate:Date,
+    bookingFrom:String,
+    bookingTo:String,
     bookingTime:Date
 });
 

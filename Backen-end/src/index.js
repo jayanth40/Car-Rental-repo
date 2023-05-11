@@ -38,6 +38,23 @@ const newUser = new users({
     }
 })
 
+
+app.put('/cars/:vehicleId', async (req, res) => {
+    try {
+      const vehicleId = req.params.vehicleId;
+      const available = "No";
+      const car = await cars.findOneAndUpdate({ vehicalId: vehicleId }, { available: available });
+      if (!car) {
+        return res.status(404).json({ message: `Car with vehicleId ${vehicleId} not found` });
+      }
+      res.json(  "Updated successfully" );
+    } catch (err) {
+     
+      res.status(500).json({ message: 'Error updating car', error: err });
+    }
+  });
+  
+
 app.listen(port, () => console.log(`App Running on PORT ${port}!`))
 
 module.exports = app;

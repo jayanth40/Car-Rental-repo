@@ -31,17 +31,18 @@ function Name(){
           id="outlined-required"
           label="Last Name"
         //   placeholder="Enter Here"
-          style={{width:"270px",marginTop:"25px"}}
+          style={{width:"270px",marginTop:"25px",marginBottom:"20px"}}
           onChange={(e)=>{
             setLastName(e.target.value)
           }}
         />
        </div>
-       <Link to={'/wheels'} style={{textDecoration:'none'}}>
+       {firstName&&lastName?<Link to={'/wheels'} style={{textDecoration:'none'}}>
        <Button variant="contained" 
-       style={{width:"270px",height:"50px",marginTop:"25px",marginBottom:"20px",}}>Next
+       style={{width:"270px",height:"50px",marginBottom:"20px",}}>Next
        </Button>
-       </Link>
+       </Link>:""}
+       
        
     </Paper>
     </div>
