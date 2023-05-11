@@ -18,7 +18,7 @@ function Name(){
           required
           id="outlined-required"
           label="First Name"
-          placeholder="Enter Here"
+          placeholder="Fill the first name to proceed"
           style={{width:"270px",marginTop:"-25px"}}
           onChange={(e)=>{
             setFirstName(e.target.value)
@@ -30,7 +30,7 @@ function Name(){
           required
           id="outlined-required"
           label="Last Name"
-        //   placeholder="Enter Here"
+          placeholder="Fill the last name to proceed"
           style={{width:"270px",marginTop:"25px",marginBottom:"20px"}}
           onChange={(e)=>{
             setLastName(e.target.value)
